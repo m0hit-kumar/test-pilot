@@ -1,11 +1,11 @@
 "use client";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
-import AuthDialog from "@/components/ui/authDialog";
+import AuthDialog from "@/components/AuthDialog";
 import useHomepageHooks from "./home.hooks";
+import { useState } from "react";
 
 export default function Home() {
-  const { login } = useHomepageHooks();
   return (
     <div className="flex flex-col min-h-[100dvh]">
       <header className="px-4 lg:px-6 h-14 flex items-center">
@@ -64,8 +64,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <AuthDialog label={"Start Free Trial"} onPress={login} />
-
+                  <AuthDialog label={"Start Free Trial"} />
                   <Link
                     href="#"
                     className="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
